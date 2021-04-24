@@ -1,0 +1,20 @@
+doctype html
+html(lang="jp")
+  head
+    meta(charset="UTF-8")
+    link(rel="stylesheet",
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css",
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm",
+    crossorigin="anonymous")
+    title 秘密の匿名掲示板
+  body.container
+    div.my-3
+      a(href="/logout").btn.btn-info.float-right ログアウト
+      h1 プロフィールページ
+      a(href="/posts").stretched-link.float-right 投稿ページ
+      p ログインユーザー： #{user}
+
+    script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js",
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl",
+    crossorigin="anonymous")
