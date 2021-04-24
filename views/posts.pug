@@ -13,7 +13,11 @@ html(lang="jp")
       h1 秘密の匿名掲示板
     h2 新規投稿
     form(method="post" action="/posts")
+      dev.form-group
+        span タイトル：
+        input(type="text" name="title" value=title)
       div.form-group
+        span 投稿内容：
         textarea(name="content" rows="4").form-control
         input(type="hidden" name="oneTimeToken" value=oneTimeToken)
       div.form-group
@@ -27,7 +31,8 @@ html(lang="jp")
               span #{post.id} : 管理人 ★
             else
               - var originalTrackingId = post.trackingCookie ? post.trackingCookie.split('_')[0] : ''
-              span #{post.id} : ID:#{originalTrackingId}  
+              span #{post.id} : ID:#{originalTrackingId}
+            p タイトル : #{post.title}
         div.card-body
           p.card-text(style="white-space:pre; overflow:auto;") #{post.content}
         div.card-footer
