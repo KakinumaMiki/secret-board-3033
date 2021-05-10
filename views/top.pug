@@ -11,7 +11,9 @@ html(lang="ja")
     div.my-3
       a(href="/logout").btn.btn-info.float-right ログアウト
       h1 秘密の匿名掲示板
+      a(href="/posts").stretched-link.float-right 投稿ページ
     h2 トップページ
+    p #{user} でログイン中
     h3 最新の投稿
     each post in posts
       div.card.my-3
