@@ -12,6 +12,9 @@ html(lang="jp")
       a(href="/logout").btn.btn-info.float-right ログアウト
       h1 秘密の匿名掲示板
       a(href="/top").stretched-link.float-right トップページ
+      - var isAdmin = (user === 'admin')
+      if isAdmin
+        a(href="/diaries").stretched-link.float-right 運用日記ページ
     h2 新規投稿
     form(method="post" action="/posts")
       div.form-group
@@ -33,7 +36,6 @@ html(lang="jp")
           p.card-text(style="white-space:pre; overflow:auto;") #{post.content}
         div.card-footer
             div 投稿日時: #{post.formattedCreatedAt}
-            - var isAdmin = (user === 'admin')
             if isAdmin
               div 投稿者: #{post.postedBy}
             - var isDeletable = (user === post.postedBy || isAdmin)
